@@ -10,5 +10,7 @@ router.get("/friends", function (req, res) {
     res.json(friends)
 });
 
+// router.post()
+
 // Export the module for use in the server
 module.exports = router;
