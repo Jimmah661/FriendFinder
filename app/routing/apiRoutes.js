@@ -6,11 +6,15 @@ var path = require('path');
 // Call the data from the friends.js file
 var friends = require(path.join(__dirname, "../data/friends.js"));
 
+// Get function to pull the information out of the Friends variable
 router.get("/friends", function (req, res) {
     res.json(friends)
 });
 
-// router.post()
+// Post function to update the friends variable, needs to be called from the survey page
+router.post('/friends', function (req, res) {
+    friends.push(req.body)
+})
 
 // Export the module for use in the server
 module.exports = router;
