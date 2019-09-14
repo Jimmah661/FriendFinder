@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset='UTF-8'>
+    <title>FriendFinder</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Question time</h2>
+        <hr>
+        <form id="aboutYou">
+            <h2>About you</h2>
+            <div class="form-group">
+                <label class="questionText" for="name">Your Name (required)</label>
+                <input type="text" class="form-control" id="name" placeholder="Johnny Bravo">
+            </div>
+            <div class="form-group">
+                <label for="photoLink">Link to a current photo (required)</label>
+                <input type="url" class="form-control" id="photoLink" placeholder="https://i.imgur.com/TrwuNH2.jpg">
+            </div>
+            <hr>
+
+            <!-- Test Input for form -->
+            <h3>Question </h3>
+            <label class="mr-sm-2 sr-only" for="q1">q1</label>
+            <select class="custom-select mr-sm-2" id="q1">
+                <option selected>Choose one...</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3>Question </h3>
+            <label class="mr-sm-2 sr-only" for="q2">q2</label>
+            <select class="custom-select mr-sm-2" id="q2">
+                <option selected>Choose one...</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3>Question </h3>
+            <label class="mr-sm-2 sr-only" for="q3">q3</label>
+            <select class="custom-select mr-sm-2" id="q3">
+                <option selected>Choose one...</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3>Question </h3>
+            <label class="mr-sm-2 sr-only" for="q4">q4</label>
+            <select class="custom-select mr-sm-2" id="q4">
+                <option selected>Choose one...</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3>Question </h3>
+            <label class="mr-sm-2 sr-only" for="q5">q5</label>
+            <select class="custom-select mr-sm-2" id="q5">
+                <option selected>Choose one...</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3>Question </h3>
+            <label class="mr-sm-2 sr-only" for="q6">q6</label>
+            <select class="custom-select mr-sm-2" id="q6">
+                <option selected>Choose one...</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3>Question </h3>
+            <label class="mr-sm-2 sr-only" for="q7">q7</label>
+            <select class="custom-select mr-sm-2" id="q7">
+                <option selected>Choose one...</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3>Question </h3>
+            <label class="mr-sm-2 sr-only" for="q8">q8</label>
+            <select class="custom-select mr-sm-2" id="q8">
+                <option selected>Choose one...</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3>Question </h3>
+            <label class="mr-sm-2 sr-only" for="q9">q9</label>
+            <select class="custom-select mr-sm-2" id="q9">
+                <option selected>Choose one...</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+            <h3>Question </h3>
+            <label class="mr-sm-2 sr-only" for="q10">q10</label>
+            <select class="custom-select mr-sm-2" id="q10">
+                <option selected>Choose one...</option>
+                <option value="1">1 (Strongly Disagree)</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5 (Strongly Agree)</option>
+            </select>
+
+
+            <!-- Submit button -->
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary" id="friendMe" data-toggle="modal"
+                    data-target="#friendModal">Submit</button>
+            </div>
+        </form>
+        <!-- FORM ENDS HERE -->
+
+        <!-- Container ends here -->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="footer">
+        <div class="container">
+            <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/Jimmah661/FriendFinder">My
+                    Github Repo</a></p>
+        </div>
+    </div>
+
+    <script>
+        $("#aboutYou").submit(function (event) {
+            event.preventDefault();
+            var name = $('#name').val();
+            var image = $('#photoLink').val();
+            var array = [];
+            for (i = 1; i < 11; i++) {
+                array.push(parseInt($('#q' + i).val()))
+            }
+            if (!array.every(function (value) { return Number.isInteger(value) })) {
+                alert("Please ensure that all questions have been answered")
+            } else if (!image) {
+                alert("Please include a link to your image")
+            } else if (!name) {
+                alert("Please fill in you name")
+            } else {
+                var data = {
+                    "name": name,
+                    "photo": image,
+                    "scores": array
+                }
+                $.post('api/friends', { "name": name, "photo": image, "scores": array })
+            };
+            calcScores();
+        })
+        var calcScores = function () {
+
+        }
+    </script>
+</body>
+
+</html>

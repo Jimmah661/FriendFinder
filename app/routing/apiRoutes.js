@@ -13,7 +13,9 @@ router.get("/friends", function (req, res) {
 
 // Post function to update the friends variable, needs to be called from the survey page
 router.post('/friends', function (req, res) {
+    // console.log(req.body)
     friends.push(req.body)
+    // res.redirect('/')
 })
 
 // Export the module for use in the server
