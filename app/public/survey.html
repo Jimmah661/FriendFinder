@@ -185,6 +185,9 @@
             for (i = 1; i < 11; i++) {
                 array.push(parseInt($('#q' + i).val()))
             }
+
+
+            // POST information to the API
             if (!array.every(function (value) { return Number.isInteger(value) })) {
                 alert("Please ensure that all questions have been answered")
             } else if (!image) {
@@ -197,13 +200,34 @@
                     "photo": image,
                     "scores": array
                 }
+                calcScores(data.scores);
                 $.post('api/friends', { "name": name, "photo": image, "scores": array })
             };
-            calcScores();
         })
-        var calcScores = function () {
 
+        var calcScores = function (array) {
+            $.get('api/friends', function (req, res) {
+                var results = [];
+                for (i = 0; i < req.length; i++) {
+                    var p1 = array
+                    var p2 = req[i].scores
+                    var compared = []
+                    for (j = 0; j < p2.length; j++) {
+                        compared.push(Math.abs(p1[j] - p2[j]))
+                    }
+                    results.push({ 'name': req[i].name, "photo": req[i].photo, 'totalDifference': compared.reduce((a, b) => a + b, 0) })
+
+                }
+                var newRes = results.sort(function (a, b) {
+                    if (a.totalDifference > b.totalDifference) return 1;
+                    if (b.totalDifference > a.totalDifference) return -1;
+                    return 0;
+                })
+                alert("Your best match is " + newRes[0].name + " with a difference score of " + newRes[0].totalDifference + "\nCheck them out at " + newRes[0].photo)
+
+            })
         }
+
     </script>
 </body>
 

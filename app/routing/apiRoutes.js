@@ -15,7 +15,7 @@ router.get("/friends", function (req, res) {
 router.post('/friends', function (req, res) {
     // console.log(req.body)
     friends.push(req.body)
-    // res.redirect('/')
+    res.send('/')
 })
 
 // Export the module for use in the server
