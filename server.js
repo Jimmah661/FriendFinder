@@ -13,7 +13,7 @@ var PORT = process.env.PORT || 8000;
 // set up the middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static(path.join(__dirname, 'app/public')))
+app.use(express.static(path.join(__dirname, 'app/public')))
 
 // Routing Declarations (See apiRouting and htmlRouting)
 app.use('/api', api);

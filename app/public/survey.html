@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+    <link rel="stylesheet" href="./stylesheets/modal.css">
 </head>
 
 <body>
@@ -30,7 +31,7 @@
             <hr>
 
             <!-- Test Input for form -->
-            <h3>Question </h3>
+            <h4>Videogames are an artform</h4>
             <label class="mr-sm-2 sr-only" for="q1">q1</label>
             <select class="custom-select mr-sm-2" id="q1">
                 <option selected>Choose one...</option>
@@ -41,7 +42,7 @@
                 <option value="5">5 (Strongly Agree)</option>
             </select>
 
-            <h3>Question </h3>
+            <h4>True love exists in the world</h4>
             <label class="mr-sm-2 sr-only" for="q2">q2</label>
             <select class="custom-select mr-sm-2" id="q2">
                 <option selected>Choose one...</option>
@@ -52,7 +53,7 @@
                 <option value="5">5 (Strongly Agree)</option>
             </select>
 
-            <h3>Question </h3>
+            <h4>Modals suck, like, big time</h4>
             <label class="mr-sm-2 sr-only" for="q3">q3</label>
             <select class="custom-select mr-sm-2" id="q3">
                 <option selected>Choose one...</option>
@@ -63,7 +64,7 @@
                 <option value="5">5 (Strongly Agree)</option>
             </select>
 
-            <h3>Question </h3>
+            <h4>I love to cook</h4>
             <label class="mr-sm-2 sr-only" for="q4">q4</label>
             <select class="custom-select mr-sm-2" id="q4">
                 <option selected>Choose one...</option>
@@ -74,7 +75,7 @@
                 <option value="5">5 (Strongly Agree)</option>
             </select>
 
-            <h3>Question </h3>
+            <h4>Team sports aren't really my thing</h4>
             <label class="mr-sm-2 sr-only" for="q5">q5</label>
             <select class="custom-select mr-sm-2" id="q5">
                 <option selected>Choose one...</option>
@@ -85,7 +86,7 @@
                 <option value="5">5 (Strongly Agree)</option>
             </select>
 
-            <h3>Question </h3>
+            <h4>I am bored with my current job</h4>
             <label class="mr-sm-2 sr-only" for="q6">q6</label>
             <select class="custom-select mr-sm-2" id="q6">
                 <option selected>Choose one...</option>
@@ -96,7 +97,7 @@
                 <option value="5">5 (Strongly Agree)</option>
             </select>
 
-            <h3>Question </h3>
+            <h4>I am always tired</h4>
             <label class="mr-sm-2 sr-only" for="q7">q7</label>
             <select class="custom-select mr-sm-2" id="q7">
                 <option selected>Choose one...</option>
@@ -107,7 +108,7 @@
                 <option value="5">5 (Strongly Agree)</option>
             </select>
 
-            <h3>Question </h3>
+            <h4>Nothing in life brings me joy</h4>
             <label class="mr-sm-2 sr-only" for="q8">q8</label>
             <select class="custom-select mr-sm-2" id="q8">
                 <option selected>Choose one...</option>
@@ -118,7 +119,7 @@
                 <option value="5">5 (Strongly Agree)</option>
             </select>
 
-            <h3>Question </h3>
+            <h4>Healthcare is a universal right</h4>
             <label class="mr-sm-2 sr-only" for="q9">q9</label>
             <select class="custom-select mr-sm-2" id="q9">
                 <option selected>Choose one...</option>
@@ -129,7 +130,7 @@
                 <option value="5">5 (Strongly Agree)</option>
             </select>
 
-            <h3>Question </h3>
+            <h4>Weddings are way too much effort</h4>
             <label class="mr-sm-2 sr-only" for="q10">q10</label>
             <select class="custom-select mr-sm-2" id="q10">
                 <option selected>Choose one...</option>
@@ -142,32 +143,29 @@
 
 
             <!-- Submit button -->
-            <div class="col-12">
+            <div class="col-12 mt-4">
                 <button type="submit" class="btn btn-primary" id="friendMe" data-toggle="modal"
                     data-target="#friendModal">Submit</button>
             </div>
         </form>
         <!-- FORM ENDS HERE -->
+        <!-- Trigger/Open The Modal -->
+        <button id="myBtn">Open Modal</button>
 
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Your best friend is <span id='bestFriend'></span></p>
+                <p>Check them out!</p>
+                <img id="bestFriendPic" src="https://i.imgur.com/TrwuNH2.jpg">
+            </div>
+
+        </div>
         <!-- Container ends here -->
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <div class="footer">
         <div class="container">
@@ -223,11 +221,41 @@
                     if (b.totalDifference > a.totalDifference) return -1;
                     return 0;
                 })
-                alert("Your best match is " + newRes[0].name + " with a difference score of " + newRes[0].totalDifference + "\nCheck them out at " + newRes[0].photo)
-
+                console.log(newRes)
+                // alert("Your best match is " + newRes[0].name + " with a difference score of " + newRes[0].totalDifference + "\nCheck them out at " + newRes[0].photo)
+                $('#bestFriend').text(newRes[1].name);
+                $("#bestFriendPic").attr("src", newRes[1].photo);
+                modal.style.display = "block"
             })
         }
 
+
+        //MODAL SCRIPTING
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on the button, open the modal
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
     </script>
 </body>
 
